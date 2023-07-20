@@ -1,4 +1,6 @@
-﻿namespace WiflyBetApi
+﻿using WiflyBetApi.Enums;
+
+namespace WiflyBetApi.Extensions
 {
     internal static class MetodosDeExtensao
     {

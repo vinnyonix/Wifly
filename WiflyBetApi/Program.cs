@@ -1,4 +1,6 @@
 using WiflyBetApi;
+using WiflyBetApi.Interfaces;
+using WiflyBetApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

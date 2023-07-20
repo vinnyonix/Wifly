@@ -1,4 +1,8 @@
-﻿namespace WiflyBetApi
+﻿using WiflyBetApi.Enums;
+using WiflyBetApi.Extensions;
+using WiflyBetApi.Interfaces;
+
+namespace WiflyBetApi.Models
 {
     public class Banca
     {

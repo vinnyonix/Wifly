@@ -1,4 +1,4 @@
-﻿namespace WiflyBetApi
+﻿namespace WiflyBetApi.Models
 {
     public class PremiacaoInfo
     {

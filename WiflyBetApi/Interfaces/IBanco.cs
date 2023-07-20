@@ -1,4 +1,4 @@
-﻿namespace WiflyBetApi
+﻿namespace WiflyBetApi.Interfaces
 {
     public interface IBanco
     {

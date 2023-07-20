@@ -1,4 +1,7 @@
-﻿namespace WiflyBetApi
+﻿
+using WiflyBetApi.Enums;
+
+namespace WiflyBetApi.Models
 {
     public class BancoMovimentacao
     {

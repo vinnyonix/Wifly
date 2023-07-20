@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DESENVOLVIMENTO\\WiflyBetApi\\WiflyBetApi\\WiflyBetApi.csproj",
+      "projectUniqueName": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
       "projectName": "WiflyBetApi",
-      "projectPath": "D:\\DESENVOLVIMENTO\\WiflyBetApi\\WiflyBetApi\\WiflyBetApi.csproj",
+      "projectPath": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
       "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
-      "outputPath": "D:\\DESENVOLVIMENTO\\WiflyBetApi\\WiflyBetApi\\obj\\",
+      "outputPath": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinny\\AppData\\Roaming\\NuGet\\NuGet.Config",

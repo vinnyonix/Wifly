@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WiflyBetApi.Interfaces;
+using WiflyBetApi.Models;
 
 namespace WiflyBetApi.Controllers
 {

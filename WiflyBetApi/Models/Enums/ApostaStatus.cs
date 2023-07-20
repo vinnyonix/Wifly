@@ -1,4 +1,4 @@
-﻿namespace WiflyBetApi
+﻿namespace WiflyBetApi.Enums
 {
     public enum ApostaStatus
     {

@@ -1,4 +1,6 @@
-﻿namespace WiflyBetApi
+﻿using WiflyBetApi.Models;
+
+namespace WiflyBetApi.Interfaces
 {
     public interface IDiretorDeBanca
     {
