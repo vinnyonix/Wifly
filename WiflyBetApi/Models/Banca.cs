@@ -6,12 +6,12 @@ namespace WiflyBetApi.Models
 {
     public class Banca
     {
-        private IBanco _banco;
+        private readonly IBanco _banco;
 
         public Banca(IBanco banco)
         {
             // Define o valor inicial da banca de 1000;
-            decimal valorDeAbertura = 1000;
+            decimal valorDeAbertura = 100;
 
             //Instancia o banco, retira 1000 para iniciar a banca e adiciona na banca;
             _banco = banco;
@@ -33,8 +33,8 @@ namespace WiflyBetApi.Models
         public void Apostar(Aposta aposta)
         {
             ListaDeApostas.Add(aposta);
-            ContaDeRetencao = ContaDeRetencao + aposta.Valor / 2;
-            ContaDePagamentoDisponivel = ContaDePagamentoDisponivel + aposta.Valor / 2;
+            ContaDeRetencao += aposta.Valor / 2;
+            ContaDePagamentoDisponivel += aposta.Valor / 2;
             Rodar(aposta);
         }
 
@@ -54,7 +54,7 @@ namespace WiflyBetApi.Models
             return ListaDeApostas.Count(a => a.ApostaStatus == ApostaStatus.Vitoria);
         }
 
-        public void Rodar(Aposta aposta)
+        private void Rodar(Aposta aposta)
         {
             var numeroSorteado = new Random().NextDouble();
             if (numeroSorteado < aposta.Chance)
@@ -63,10 +63,9 @@ namespace WiflyBetApi.Models
                 Tesouro(aposta);
 
                 MetodosDeExtensao.MensagemColorida("", "", MensagemTipo.Padrao);
-                MetodosDeExtensao.MensagemColorida("Aposta Id", aposta.ApostaId.ToString(), "valor", aposta.Valor.ToString(), "Status", aposta.ApostaStatus.ToString(), MensagemTipo.Sucesso);
-                MetodosDeExtensao.MensagemColorida("multiplicador", aposta.Premiacao.Multiplicador.ToString(), "valor disponível na banca", aposta.Premiacao.ValorLimiteDePagamento.ToString(), MensagemTipo.Sucesso);
-                MetodosDeExtensao.MensagemColorida("conta de pagamento", ContaDePagamentoDisponivel.ToString(), MensagemTipo.Sucesso);
-                MetodosDeExtensao.MensagemColorida("valor premiado", aposta.Premiacao.Valor.ToString(), MensagemTipo.Sucesso);
+                MetodosDeExtensao.MensagemColorida("Aposta Id", aposta.ApostaId.ToString(), "valor", aposta.Valor.ToString(), "Status", aposta.ApostaStatus.ToString(), MensagemTipo.Verde);
+                MetodosDeExtensao.MensagemColorida("multiplicador", aposta.Premiacao.Multiplicador.ToString(), "disponível para pagamento:", ContaDePagamentoDisponivel.ToString(), MensagemTipo.Verde);
+                MetodosDeExtensao.MensagemColorida("valor premiado", aposta.Premiacao.Valor.ToString(), MensagemTipo.Verde);
                 MetodosDeExtensao.MensagemColorida("", "", MensagemTipo.Padrao);
             }
             else
@@ -78,7 +77,7 @@ namespace WiflyBetApi.Models
 
         private void Tesouro(Aposta aposta)
         {
-            // Cria uma lista de multiplicadores.
+            // Cria uma lista de multiplicadores de premiação.
             var listaDeMultiplicacao = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 44, 46, 48, 50, 53, 56, 59, 63, 67, 72, 77, 83, 89, 95, 100 };
 
             var listaDeChances = new List<PremiacaoInfo>();
@@ -116,12 +115,24 @@ namespace WiflyBetApi.Models
             ContaDePagamentoEfetuado = ContaDePagamentoEfetuado + aposta.Premiacao.Valor;
         }
 
-        public void Finalizar() 
+        public void Finalizar()
         {
             // Se a conta de pagamento ainda resta algum valor, este valor é retornado para o cofre do banco.
-            if (ContaDePagamentoDisponivel > 0) {
+            if (ContaDePagamentoDisponivel > 0)
+            {
                 _banco.Adicionar(ContaDePagamentoDisponivel);
             }
+
+            MetodosDeExtensao.MensagemColorida("", "", MensagemTipo.MagentaEscuro);
+            MetodosDeExtensao.MensagemColorida("finalizando banca:", BancaId.ToString(), MensagemTipo.MagentaEscuro);
+            MetodosDeExtensao.MensagemColorida("Total de postas", QtdeApostas().ToString(), MensagemTipo.MagentaEscuro);
+            MetodosDeExtensao.MensagemColorida("Vencedores", QtdeApostasVencedoras().ToString(), MensagemTipo.MagentaEscuro);
+            MetodosDeExtensao.MensagemColorida("Total pago", ContaDePagamentoEfetuado.ToString(), MensagemTipo.MagentaEscuro);
+            MetodosDeExtensao.MensagemColorida("Valor retido", ContaDeRetencao.ToString(), MensagemTipo.MagentaEscuro);
+            MetodosDeExtensao.MensagemColorida("Valor residual", ContaDePagamentoDisponivel.ToString(), MensagemTipo.MagentaEscuro);
+
+            MetodosDeExtensao.MensagemColorida("", "", MensagemTipo.MagentaEscuro);
+
         }
     }
 }

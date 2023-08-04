@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj": {}
+    "F:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj": {}
   },
   "projects": {
-    "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj": {
+    "F:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
+        "projectUniqueName": "F:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
         "projectName": "WiflyBetApi",
-        "projectPath": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
+        "projectPath": "F:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
         "packagesPath": "C:\\Users\\vinny\\.nuget\\packages\\",
-        "outputPath": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\obj\\",
+        "outputPath": "F:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vinny\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +40,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

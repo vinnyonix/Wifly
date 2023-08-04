@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+Yj8YDfFCxlVYQt+ETcRhcVHzr9TGouX1GkiHI815GRtz/ZdFGtWWV0J2cG0UJrhnXig8EvtQg4qbvbRHO4yjQ==",
+  "dgSpecHash": "YgsioOOjyOvA+Tg3cDagrAw7iFe8H8IJzul19diINtT2w8cAHEjcswuN8j2XYYTXXsga0CsB88DAbjhubC/Z4w==",
   "success": true,
-  "projectFilePath": "D:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "F:\\DESENVOLVIMENTO\\Wifly\\WiflyBetApi\\WiflyBetApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vinny\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\vinny\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

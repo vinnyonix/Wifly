@@ -16,7 +16,7 @@ namespace WiflyBetApi.Controllers
         }
 
         [HttpGet("apostar")]
-        public void Apostar(decimal valor) 
+        public void Apostar(decimal valor)
         {
             _diretorDeBanca.Apostar(new(apostador: "", valor: valor));
         }
